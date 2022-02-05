@@ -213,7 +213,213 @@
               ]
             }
           ]
-        }
+        },
+
+        {
+          "type": "input-text",
+          "name": "name3",
+          "label": "姓名",
+          "required": true,
+          "autoComplete": false,
+          "visibleOn": "${num>2}",
+          "clearValueOnHidden": true
+        },
+        {
+          "type": "input-text",
+          "label": "身份证号",
+          "name": "id3",
+          "required": true,
+          "validations": {
+            "isId": true
+          },
+          "visibleOn": "${num>2}",
+          "clearValueOnHidden": true
+        },
+        {
+          "type": "grid",
+          "columns": [
+            {
+              "body": [
+                {
+                  "type": "input-image",
+                  "label": "身份证正面",
+                  "name": "image31",
+                  "imageClassName": "r w-full",
+                  "required": true,
+                  "multiple": false,
+                  "receiver": "https://a.gezier.com/index/index/up2",
+                  "maxSize": 3774873.6,
+                  "fixedSize": false,
+                  "hideUploadButton": false,
+                  "autoUpload": true,
+                  "compress": true,
+                  "visibleOn": "${num>2}",
+                  "compressOptions": {
+                  }
+                }
+              ]
+            },
+            {
+              "body": [
+                {
+                  "type": "input-image",
+                  "label": "身份证反面",
+                  "name": "image32",
+                  "imageClassName": "r w-full",
+                  "required": true,
+                  "multiple": false,
+                  "receiver": "https://a.gezier.com/index/index/up2",
+                  "maxSize": 3774873.6,
+                  "fixedSize": false,
+                  "hideUploadButton": false,
+                  "autoUpload": true,
+                  "compress": true,
+                  "visibleOn": "${num>2}",
+                  "compressOptions": {
+                  }
+                }
+              ]
+            }
+          ]
+        },
+
+        {
+          "type": "input-text",
+          "name": "name4",
+          "label": "姓名",
+          "required": true,
+          "autoComplete": false,
+          "visibleOn": "${num>3}",
+          "clearValueOnHidden": true
+        },
+        {
+          "type": "input-text",
+          "label": "身份证号",
+          "name": "id4",
+          "required": true,
+          "validations": {
+            "isId": true
+          },
+          "visibleOn": "${num>3}",
+          "clearValueOnHidden": true
+        },
+        {
+          "type": "grid",
+          "columns": [
+            {
+              "body": [
+                {
+                  "type": "input-image",
+                  "label": "身份证正面",
+                  "name": "image41",
+                  "imageClassName": "r w-full",
+                  "required": true,
+                  "multiple": false,
+                  "receiver": "https://a.gezier.com/index/index/up2",
+                  "maxSize": 3774873.6,
+                  "fixedSize": false,
+                  "hideUploadButton": false,
+                  "autoUpload": true,
+                  "compress": true,
+                  "visibleOn": "${num>3}",
+                  "compressOptions": {
+                  }
+                }
+              ]
+            },
+            {
+              "body": [
+                {
+                  "type": "input-image",
+                  "label": "身份证反面",
+                  "name": "image42",
+                  "imageClassName": "r w-full",
+                  "required": true,
+                  "multiple": false,
+                  "receiver": "https://a.gezier.com/index/index/up2",
+                  "maxSize": 3774873.6,
+                  "fixedSize": false,
+                  "hideUploadButton": false,
+                  "autoUpload": true,
+                  "compress": true,
+                  "visibleOn": "${num>3}",
+                  "compressOptions": {
+                  }
+                }
+              ]
+            }
+          ]
+        },
+
+        {
+          "type": "input-text",
+          "name": "name5",
+          "label": "姓名",
+          "required": true,
+          "autoComplete": false,
+          "visibleOn": "${num>4}",
+          "clearValueOnHidden": true
+        },
+        {
+          "type": "input-text",
+          "label": "身份证号",
+          "name": "id5",
+          "required": true,
+          "validations": {
+            "isId": true
+          },
+          "visibleOn": "${num>4}",
+          "clearValueOnHidden": true
+        },
+        {
+          "type": "grid",
+          "columns": [
+            {
+              "body": [
+                {
+                  "type": "input-image",
+                  "label": "身份证正面",
+                  "name": "image51",
+                  "imageClassName": "r w-full",
+                  "required": true,
+                  "multiple": false,
+                  "receiver": "https://a.gezier.com/index/index/up2",
+                  "maxSize": 3774873.6,
+                  "fixedSize": false,
+                  "hideUploadButton": false,
+                  "autoUpload": true,
+                  "compress": true,
+                  "visibleOn": "${num>4}",
+                  "compressOptions": {
+                  }
+                }
+              ]
+            },
+            {
+              "body": [
+                {
+                  "type": "input-image",
+                  "label": "身份证反面",
+                  "name": "image52",
+                  "imageClassName": "r w-full",
+                  "required": true,
+                  "multiple": false,
+                  "receiver": "https://a.gezier.com/index/index/up2",
+                  "maxSize": 3774873.6,
+                  "fixedSize": false,
+                  "hideUploadButton": false,
+                  "autoUpload": true,
+                  "compress": true,
+                  "visibleOn": "${num>4}",
+                  "compressOptions": {
+                  }
+                }
+              ]
+            }
+          ]
+        },
+
+
       ],
       "api": "https://a.gezier.com/index/index/msg"
     }
