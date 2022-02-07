@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <title>入住信息登记</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="stylesheet" href="sdk.min.css" />
+    <style>
+      html,
+      body,
+      .app-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="app-wrapper"></div>
+    <script src="sdk.js"></script>
+    <script type="text/javascript">
+      (function () {
+        let amis = amisRequire('amis/embed');
+        let amisJSON = {
+  "type": "page",
+  "title": "",
+  "body": [
+  {
+      "type": "tpl",
+      "tpl": "入住信息登记",
+      "inline": false,
+      "style": {
+        "textAlign": "center",
+        "fontSize": "26",
+        "marginBottom": "26"
+      }
+    },
+    {
+      "type": "form",
+      "title":"",
+      "messages": {
+        "validateFailed": "内容输入错误，请检查",
+        "fetchSuccess": "succeed",
+        "fetchFailed": "error",
+        "saveSuccess": "succ",
+        "saveFailed": "err"
+      },
+      "body": [
+        {
+          "type": "radios",
+          "label": "入住人数",
+          "name": "num",
+          "options": [
+            {
+              "label": "1",
+              "value": 1
+            },
+            {
+              "label": "2",
+              "value": 2
+            },
+            {
+              "label": "3",
+              "value": 3
+            },
+            {
+              "label": "4",
+              "value": 4
+            },
+            {
+              "label": "5",
+              "value": 5
+            }
+          ],
+          "required": true,
+          "remark": null,
+          "joinValues": true
+        },
+        {
+          "type": "input-text",
+          "name": "name1",
+          "label": "姓名",
+          "required": true,
+          "autoComplete": false
+        },
+        {
+          "type": "input-text",
+          "label": "身份证号",
+          "name": "id1",
+          "required": true,
+          "validations": {
+            "isId": true
+          }
+        },
+        {
+          "type": "input-text",
+          "label": "手机号",
+          "name": "phone1",
+          "validations": {
+              "isPhoneNumber": true
+          },
+          "required": true
+      },
+        {
+          "type": "grid",
+          "columns": [
+            {
+              "body": [
+                {
+                  "type": "input-image",
+                  "label": "身份证正面",
+                  "name": "image11",
+                  "imageClassName": "r w-full",
+                  "required": true,
+                  "multiple": false,
+                  "receiver": "https://a.gezier.com/index/index/up2",
+                  "maxSize": 3774873.6,
+                  "fixedSize": false,
+                  "hideUploadButton": false,
+                  "autoUpload": true,
+                  "compress": true,
+                  "compressOptions": {
+                  }
+                }
+              ]
+            },
+            {
+              "body": [
+                {
+                  "type": "input-image",
+                  "label": "身份证反面",
+                  "name": "image12",
+                  "imageClassName": "r w-full",
+                  "required": true,
+                  "multiple": false,
+                  "receiver": "https://a.gezier.com/index/index/up2",
+                  "maxSize": 3774873.6,
+                  "fixedSize": false,
+                  "hideUploadButton": false,
+                  "autoUpload": true,
+                  "compress": true,
+                  "compressOptions": {
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        
+        {
+          "type": "input-text",
+          "name": "name2",
+          "label": "姓名",
+          "required": true,
+          "autoComplete": false,
+          "visibleOn": "${num>1}",
+          "clearValueOnHidden": true
+        },
+        {
+          "type": "input-text",
+          "label": "身份证号",
+          "name": "id2",
+          "required": true,
+          "validations": {
+            "isId": true
+          },
+          "visibleOn": "${num>1}",
+          "clearValueOnHidden": true
+        },
+        {
+          "type": "input-text",
+          "label": "手机号",
+          "name": "phone2",
+          "validations": {
+              "isPhoneNumber": true
+          },
+          "required": true,
+          "visibleOn": "${num>1}",
+          "clearValueOnHidden": true
+      },
+        {
+          "type": "grid",
+          "columns": [
+            {
+              "body": [
+                {
+                  "type": "input-image",
+                  "label": "身份证正面",
+                  "name": "image21",
+                  "imageClassName": "r w-full",
+                  "required": true,
+                  "multiple": false,
+                  "receiver": "https://a.gezier.com/index/index/up2",
+                  "maxSize": 3774873.6,
+                  "fixedSize": false,
+                  "hideUploadButton": false,
+                  "autoUpload": true,
+                  "compress": true,
+                  "visibleOn": "${num>1}",
+                  "compressOptions": {
+                  }
+                }
+              ]
+            },
+            {
+              "body": [
+                {
+                  "type": "input-image",
+                  "label": "身份证反面",
+                  "name": "image22",
+                  "imageClassName": "r w-full",
+                  "required": true,
+                  "multiple": false,
+                  "receiver": "https://a.gezier.com/index/index/up2",
+                  "maxSize": 3774873.6,
+                  "fixedSize": false,
+                  "hideUploadButton": false,
+                  "autoUpload": true,
+                  "compress": true,
+                  "visibleOn": "${num>1}",
+                  "compressOptions": {
+                  }
+                }
+              ]
+            }
+          ]
+        },
+
+        {
+          "type": "input-text",
+          "name": "name3",
+          "label": "姓名",
+          "required": true,
+          "autoComplete": false,
+          "visibleOn": "${num>2}",
+          "clearValueOnHidden": true
+        },
+        {
+          "type": "input-text",
+          "label": "身份证号",
+          "name": "id3",
+          "required": true,
+          "validations": {
+            "isId": true
+          },
+          "visibleOn": "${num>2}",
+          "clearValueOnHidden": true
+        },
+        {
+          "type": "input-text",
+          "label": "手机号",
+          "name": "phone3",
+          "validations": {
+              "isPhoneNumber": true
+          },
+          "required": true,
+          "visibleOn": "${num>2}",
+          "clearValueOnHidden": true
+      },
+        {
+          "type": "grid",
+          "columns": [
+            {
+              "body": [
+                {
+                  "type": "input-image",
+                  "label": "身份证正面",
+                  "name": "image31",
+                  "imageClassName": "r w-full",
+                  "required": true,
+                  "multiple": false,
+                  "receiver": "https://a.gezier.com/index/index/up2",
+                  "maxSize": 3774873.6,
+                  "fixedSize": false,
+                  "hideUploadButton": false,
+                  "autoUpload": true,
+                  "compress": true,
+                  "visibleOn": "${num>2}",
+                  "compressOptions": {
+                  }
+                }
+              ]
+            },
+            {
+              "body": [
+                {
+                  "type": "input-image",
+                  "label": "身份证反面",
+                  "name": "image32",
+                  "imageClassName": "r w-full",
+                  "required": true,
+                  "multiple": false,
+                  "receiver": "https://a.gezier.com/index/index/up2",
+                  "maxSize": 3774873.6,
+                  "fixedSize": false,
+                  "hideUploadButton": false,
+                  "autoUpload": true,
+                  "compress": true,
+                  "visibleOn": "${num>2}",
+                  "compressOptions": {
+                  }
+                }
+              ]
+            }
+          ]
+        },
+
+        {
+          "type": "input-text",
+          "name": "name4",
+          "label": "姓名",
+          "required": true,
+          "autoComplete": false,
+          "visibleOn": "${num>3}",
+          "clearValueOnHidden": true
+        },
+        {
+          "type": "input-text",
+          "label": "身份证号",
+          "name": "id4",
+          "required": true,
+          "validations": {
+            "isId": true
+          },
+          "visibleOn": "${num>3}",
+          "clearValueOnHidden": true
+        },
+        {
+          "type": "input-text",
+          "label": "手机号",
+          "name": "phone4",
+          "validations": {
+              "isPhoneNumber": true
+          },
+          "required": true,
+          "visibleOn": "${num>3}",
+          "clearValueOnHidden": true
+      },
+        {
+          "type": "grid",
+          "columns": [
+            {
+              "body": [
+                {
+                  "type": "input-image",
+                  "label": "身份证正面",
+                  "name": "image41",
+                  "imageClassName": "r w-full",
+                  "required": true,
+                  "multiple": false,
+                  "receiver": "https://a.gezier.com/index/index/up2",
+                  "maxSize": 3774873.6,
+                  "fixedSize": false,
+                  "hideUploadButton": false,
+                  "autoUpload": true,
+                  "compress": true,
+                  "visibleOn": "${num>3}",
+                  "compressOptions": {
+                  }
+                }
+              ]
+            },
+            {
+              "body": [
+                {
+                  "type": "input-image",
+                  "label": "身份证反面",
+                  "name": "image42",
+                  "imageClassName": "r w-full",
+                  "required": true,
+                  "multiple": false,
+                  "receiver": "https://a.gezier.com/index/index/up2",
+                  "maxSize": 3774873.6,
+                  "fixedSize": false,
+                  "hideUploadButton": false,
+                  "autoUpload": true,
+                  "compress": true,
+                  "visibleOn": "${num>3}",
+                  "compressOptions": {
+                  }
+                }
+              ]
+            }
+          ]
+        },
+
+        {
+          "type": "input-text",
+          "name": "name5",
+          "label": "姓名",
+          "required": true,
+          "autoComplete": false,
+          "visibleOn": "${num>4}",
+          "clearValueOnHidden": true
+        },
+        {
+          "type": "input-text",
+          "label": "身份证号",
+          "name": "id5",
+          "required": true,
+          "validations": {
+            "isId": true
+          },
+          "visibleOn": "${num>4}",
+          "clearValueOnHidden": true
+        },
+        {
+          "type": "input-text",
+          "label": "手机号",
+          "name": "phone5",
+          "validations": {
+              "isPhoneNumber": true
+          },
+          "required": true,
+          "visibleOn": "${num>4}",
+          "clearValueOnHidden": true
+      },
+        {
+          "type": "grid",
+          "columns": [
+            {
+              "body": [
+                {
+                  "type": "input-image",
+                  "label": "身份证正面",
+                  "name": "image51",
+                  "imageClassName": "r w-full",
+                  "required": true,
+                  "multiple": false,
+                  "receiver": "https://a.gezier.com/index/index/up2",
+                  "maxSize": 3774873.6,
+                  "fixedSize": false,
+                  "hideUploadButton": false,
+                  "autoUpload": true,
+                  "compress": true,
+                  "visibleOn": "${num>4}",
+                  "compressOptions": {
+                  }
+                }
+              ]
+            },
+            {
+              "body": [
+                {
+                  "type": "input-image",
+                  "label": "身份证反面",
+                  "name": "image52",
+                  "imageClassName": "r w-full",
+                  "required": true,
+                  "multiple": false,
+                  "receiver": "https://a.gezier.com/index/index/up2",
+                  "maxSize": 3774873.6,
+                  "fixedSize": false,
+                  "hideUploadButton": false,
+                  "autoUpload": true,
+                  "compress": true,
+                  "visibleOn": "${num>4}",
+                  "compressOptions": {
+                  }
+                }
+              ]
+            }
+          ]
+        },
+
+
+      ],
+      "api": "https://a.gezier.com/index/index/msg"
+    }
+  ]
+};
+        let amisScoped = amis.embed('#root', amisJSON);
+      })();
+    </script>
+    
+    <link rel="stylesheet" href="iconfont.min.css" />
+  </body>
+</html>
